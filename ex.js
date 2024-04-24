@@ -12,27 +12,24 @@
 //console.log(lownum);
 
 
-const readline = require('readline');
+let myNumber = Math.round(Math.random() * 100); // Generate a random number between 1 and 100
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-let number = Math.round(Math.random() * 10);
+console.log('The number to guess is:', myNumber);
 
+// Function to check the user's guess
+function checkGuess(userGuess) {
+    if(isNaN(userGuess)) {
+        console.log("Invalid input. Please enter a valid number.");
+    } else if(userGuess > myNumber) {
+        console.log('Your number is too high. Try again lower.');
+    } else if(userGuess < myNumber) {
+        console.log('Your number is too low. Try again higher.');
+    } else {
+        console.log('Congratulations! You guessed the number correctly.');
+    }
+}
 
-rl.question('Guess a number between 1 and 100: ', (userInput) => {
-  let userGuess = parseInt(userInput);
-
-  if(isNaN(userGuess)) {
-    console.log("Invalid input. Please enter a valid number.");
-  } else if(userGuess > myNumber) {
-    console.log('Your number is too high. Try again lower.');
-  } else if(userGuess < myNumber) {
-    console.log('Your number is too low. Try again higher.');
-  } else {
-    console.log('Congratulations! You guessed the number correctly.');
-  }
-
-  rl.close();
-});
+// Test with some guesses
+checkGuess(50); // Too high
+checkGuess(30); // Too low
+checkGuess(myNumber); // Correct guess
