@@ -12,9 +12,11 @@
 //console.log(lownum);
 
 
-let myNumber = Math.round(Math.random() * 100); // Generate a random number between 1 and 100
+
+let myNumber = Math.round(Math.random() * 10); // Generate a random number between 1 and 100
 
 console.log('The number to guess is:', myNumber);
+
 
 // Function to check the user's guess
 function checkGuess(userGuess) {
@@ -25,7 +27,7 @@ function checkGuess(userGuess) {
     } else if(userGuess < myNumber) {
         console.log('Your number is too low. Try again higher.');
     } else {
-        console.log('Congratulations! You guessed the number correctly.');
+        console.log('Congratulations! You guessed the number ' + myNumber + ' correctly.');
     }
 }
 
@@ -33,3 +35,6 @@ function checkGuess(userGuess) {
 checkGuess(50); // Too high
 checkGuess(30); // Too low
 checkGuess(myNumber); // Correct guess
+
+
+
