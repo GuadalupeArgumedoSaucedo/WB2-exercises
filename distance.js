@@ -10,5 +10,7 @@ let y2 =20
 let a1 = x2 - x1;
 let a2 = y2 - y1;
 
+let  calcdistance = a1 / a2;
 
+console.log(calcdistance)
 
