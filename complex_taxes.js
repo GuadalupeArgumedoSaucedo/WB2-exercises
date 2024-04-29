@@ -21,43 +21,57 @@ if(hoursworked <= 40) {
     console.log(`your annual pay is ${annualfullpay}`);
 }
 else if(hoursworked > 40) {
-    console.log(`your annual pay with overtime is ${annualotpay}`);
+    console.log(`your annual pay with overtime is ${annualotpay}`);//annual gross pay
 }
 
 //tax rate
 let singleincome = 24700;
-let jointincome = 24700;
+let jointincome = null;
 
 
 if ((singleincome < 12000)) {        
-    console.log(`your tax rate for single filers is 5 %`);             
+    console.log(`your tax rate for single filers is ${five} %`);             
 }
-else if ((singleincome >= 12000) && (singleincome < 24999.99)) {        
-    console.log(`your tax rate for single filers is 10 %`);             
+else if ((singleincome >= 12000) && (singleincome < 24999.99)) {       
+    console.log(`your tax rate for single filers is ${ten} %`); //tax rate for single filers              
 }
 else if ((singleincome >= 25000) && (singleincome < 75999.99)) {        
-    console.log(`your tax rate for single filers is 15 %`);             
+    console.log(`your tax rate for single filers is ${fifteeny} %`);             
 }
 else if ((singleincome > 75000)) {        
-    console.log(`your tax rate for single filers is 20 %`);             
+    console.log(`your tax rate for single filers is ${twenty} %`);             
 }
 
 if ((jointincome < 12000)) {        
-    console.log(`your tax rate for joint filers is 0 %`);             
+    console.log(`your tax rate for joint filers is ${zero} %`); //join income null             
 }
 else if ((jointincome >= 12000) && (jointincome < 24999.99)) {        
-    console.log(`your tax rate for joint filers is 6 %`);             
+    console.log(`your tax rate for joint filers is ${six} %`);             
 }
 else if ((jointincome >= 25000) && (jointincome < 75999.99)) {        
-    console.log(`your tax rate for joint filers is 11 %`);             
+    console.log(`your tax rate for joint filers is ${eleven} %`);             
 }
 else if ((jointincome> 75000)) {        
-    console.log(`your tax rate for joint filers is 20 %`);             
+    console.log(`your tax rate for joint filers is ${twenty} %`);             
 }
 
-console.log(`You worked ${hoursworked} hours this period.`)//
-console.log(`Because you earn ${payrate} per hour, your gross pay is ${totalovertime}`)//
 
-console.log(`Your filing status is ${year} `)//
-console.log(`Your tax withholdings this period is ${year}`)//
-console.log(`Your net pay is ${year}`)//
+console.log(`You worked ${hoursworked} hours this period.`)//hrs this period
+console.log(`Because you earn ${payrate} per hour, your gross pay is ${totalovertime}`)//earn per hr & gross pay
+
+
+let s = "single";
+let j = null;
+
+if ((s)) {        
+    console.log(`Your filing status is ${s}`); //filing single             
+}
+else if ((j)) {        
+    console.log(`Your filing status is ${j}`);  
+}
+
+
+
+
+console.log(`Your tax withholdings this period is ${null}`)//
+console.log(`Your net pay is ${null}`)//
