@@ -15,6 +15,7 @@ let totalovertime = regularhours + overtimepay;//40 hr workweek + 5*1.5
 let year = 52;
 let annualfullpay = pay*year;
 let annualotpay = totalovertime*year
+let grossPay;
 
 
 if(hoursworked <= 40) {
@@ -24,54 +25,53 @@ else if(hoursworked > 40) {
     console.log(`your annual pay with overtime is ${annualotpay}`);//annual gross pay
 }
 
+//annual
+let weeks = 52;
+
+let annual = grossPay * weeks
+
+console.log(`Your annual income is $${annual.toFixed(2)}.`)//3
+
 //tax rate
-let singleincome = 24700;
-let jointincome = null;
+let withholdings;
+let relationship = "single";// can change
+
+console.log(`Your filing status is ${relationship}.`)//4
 
 
-if ((singleincome < 12000)) {        
-    console.log(`your tax rate for single filers is ${five} %`);             
+if (relationship = "single"){
+    if (annual < 12000) {
+        withholdings = grossPay * .05;
+    } 
+    else if((annual >= 12000) && (grossPay < 24999.99)){
+        withholdings = grossPay * .1;
+    }
+    else if ((annual >= 25000) && (grossPay < 74999.99)){
+        withholdings = grossPay * .15;
+    }
+    else if (annual > 75000){
+        withholdings = grossPay * .2;
+    }
 }
-else if ((singleincome >= 12000) && (singleincome < 24999.99)) {       
-    console.log(`your tax rate for single filers is ${ten} %`); //tax rate for single filers              
-}
-else if ((singleincome >= 25000) && (singleincome < 75999.99)) {        
-    console.log(`your tax rate for single filers is ${fifteeny} %`);             
-}
-else if ((singleincome > 75000)) {        
-    console.log(`your tax rate for single filers is ${twenty} %`);             
-}
-
-if ((jointincome < 12000)) {        
-    console.log(`your tax rate for joint filers is ${zero} %`); //join income null             
-}
-else if ((jointincome >= 12000) && (jointincome < 24999.99)) {        
-    console.log(`your tax rate for joint filers is ${six} %`);             
-}
-else if ((jointincome >= 25000) && (jointincome < 75999.99)) {        
-    console.log(`your tax rate for joint filers is ${eleven} %`);             
-}
-else if ((jointincome> 75000)) {        
-    console.log(`your tax rate for joint filers is ${twenty} %`);             
-}
-
-
-console.log(`You worked ${hoursworked} hours this period.`)//hrs this period
-console.log(`Because you earn ${payrate} per hour, your gross pay is ${totalovertime}`)//earn per hr & gross pay
-
-
-let s = "single";
-let j = null;
-
-if ((s)) {        
-    console.log(`Your filing status is ${s}`); //filing single             
-}
-else if ((j)) {        
-    console.log(`Your filing status is ${j}`);  
+else if (relationship = "joint"){
+    if (annual < 12000) {
+        withholdings = grossPay * .0;
+    } 
+    else if((annual >= 12000) && (grossPay < 24999.99)){
+        withholdings = grossPay * .06;
+    }
+    else if ((annual >= 25000) && (grossPay < 74999.99)){
+        withholdings = grossPay * .11;
+    }
+    else if (annual > 75000){
+        withholdings = grossPay * .2;
+    }
 }
 
+console.log(`Your tax withholdings this period is $${withholdings.toFixed(2)}.`)//5
 
 
+//net pay
+let netpay = grossPay-withholdings;
 
-console.log(`Your tax withholdings this period is ${null}`)//
-console.log(`Your net pay is ${null}`)//
+console.log(`Your net pay is $${netpay.toFixed(2)}.`)//6
