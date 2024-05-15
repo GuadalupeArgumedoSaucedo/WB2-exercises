@@ -14,7 +14,11 @@ else if(evening) {
     console.log(`Good evening!`);
 }
 
+// Get the current hour using the Date object
+let currentHour = new Date().getHours();
+
 // Remsey example
+/*
 if (currentHour < 10) {
     greeting = "Good morning!";
 } else if (currentHour >= 10 && currentHour < 17) {
@@ -22,10 +26,9 @@ if (currentHour < 10) {
 } else {
     greeting = "Good evening!";
 }
-if (age = 10 || age = 11) 
-{
-console.log("You are 10 or 11")
-}
 
-// Get the current hour using the Date object
-let currentHour = new Date().getHours();
+if (age === 10 || age === 11) {
+    console.log("You are 10 or 11");
+}
+*/
+

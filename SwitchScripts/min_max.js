@@ -4,6 +4,7 @@ let a = 3;
 let b = 2;
 let c = 4;
 let smallest;
+let largest; 
 
 if (a < b && a < c) {
     console.log(`The smallest value is: ${a}`);
@@ -31,4 +32,4 @@ if (a > b && a > c) {
   }
   //output
   console.log(`The largest value is: ${largest}`);
-let largest = Math.max(a, b, c);
+largest = Math.max(a, b, c);
